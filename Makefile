@@ -14,7 +14,7 @@ lint:
         asecurityteam/sdcli:v1 go lint
 
 test:
-	docker run -ti \
+	docker run -i \
         --mount src="$(DIR)",target="$(DIR)",type="bind" \
         -w "$(DIR)" \
         asecurityteam/sdcli:v1 go test
