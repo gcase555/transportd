@@ -26,4 +26,6 @@ jobs:
         run: make coverage
 
       - name: Upload Coverage Results
-        run: echo "TODO"
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        run: bash <(curl -s https://codecov.io/bash) -f .coverage/combined.cover.out
