@@ -8,7 +8,7 @@ dep:
         asecurityteam/sdcli:v1 go dep
 
 lint:
-	docker run -ti \
+	docker run -i \
         --mount src="$(DIR)",target="$(DIR)",type="bind" \
         -w "$(DIR)" \
         asecurityteam/sdcli:v1 go lint
