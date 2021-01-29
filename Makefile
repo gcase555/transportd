@@ -2,7 +2,7 @@ TAG := $(shell git rev-parse --short HEAD)
 DIR := $(shell pwd -L)
 
 dep:
-	docker run -ti \
+	docker run -i \
         --mount src="$(DIR)",target="$(DIR)",type="bind" \
         -w "$(DIR)" \
         asecurityteam/sdcli:v1 go dep
@@ -20,13 +20,13 @@ test:
         asecurityteam/sdcli:v1 go test
 
 integration:
-	docker run -ti \
+	docker run -i \
         --mount src="$(DIR)",target="$(DIR)",type="bind" \
         -w "$(DIR)" \
         asecurityteam/sdcli:v1 go integration
 
 coverage:
-	docker run -ti \
+	docker run -i \
         --mount src="$(DIR)",target="$(DIR)",type="bind" \
         -w "$(DIR)" \
         asecurityteam/sdcli:v1 go coverage
