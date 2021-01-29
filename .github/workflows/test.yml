@@ -1,7 +1,6 @@
 on: [push, pull_request]
 name: Build and Test
 jobs:
-  environment: ci
   test:
     runs-on: ubuntu-20.04
     steps:
