@@ -28,4 +28,4 @@ jobs:
       - name: Upload Coverage Results
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        run: bash <(curl -t "${CODECOV_REPO_TOKEN}" -s https://codecov.io/bash) -f .coverage/combined.cover.out
+        run: bash <(curl -s https://codecov.io/bash) -f .coverage/combined.cover.out
